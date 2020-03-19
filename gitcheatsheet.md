@@ -9,10 +9,10 @@ it creates an empty subdirectory in format .git .
 add a file content to the repository index.
 ###git commit 
 it record changes in the repository.
-##git clone<url>
+###git clone<url>
 creates a copy of an existing Git repository.
 
-## Recording changes to the repository##
+## Recording changes to the repository ##
 
 ###git status
 used to determine which files are in which state.
@@ -49,10 +49,56 @@ Move or rename a file.
 show commit logs
 ###git log --stat
 code review or to quickly browse
-###
+###git log -p -2
+limit the number of log entries displayed
+###git log --pretty=oneline
+hanges the log output to formats other than the default
+###git log --pretty=format:"%h %s" --graph
+adds a nice little ASCII graph showing your branch and merge history
+###git log -S function_name
+shows only those commits that changed the number of occurrences of that string.
 
+##Undoing Things##
 
-#GIT BRANCHING
+###git commit --amend
+make the additional changes you forgot, stage them, and commit again
+
+##Working with Remotes##
+
+###git remote
+to see which remote servers you have configured
+###git remote add <shortname> <url>
+to add a new remote Git repository as a shortname you can reference easily
+###git fetch pb
+if you want to fetch all the information but that don’t yet have in your repository
+###git fetch <remote>
+to get data from your remote projects
+###git push origin master
+loned from a server to which you have write access and if nobody has pushed in the meantime
+
+##Tagging##
+
+###git tag 
+Create, list, delete or verify a tag object signed with GPG
+###git tag -a
+to specify a command
+###git push
+Update remote refs along with associated objects
+###git push origin <tagname>
+explicitly push tags to a shared server 
+###git tag -d <tagname>
+To delete a tag on a local repository
+
+##Git Aliases##
+
+###git config
+Set up an alias for each command
+###git config --global alias.unstage 'reset HEAD --'
+creating commands that you think should exist
+###git config --global alias.visual '!gitk'
+to demostrate by aliasing
+
+##GIT BRANCHING##
 
 ###git branch <testing>
 creates a new branch.
